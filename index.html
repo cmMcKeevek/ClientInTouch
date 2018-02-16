@@ -36,14 +36,8 @@
     </main>
 
     <script type="text/javascript">
-        //Find the parent <div> for the new frame
-        var asideDiv2 = document.getElementById('iframe-dynamic');
-
         //Tell the parent div it is a reactive iframe parent (this step can happen at any point)
-        new reactive.iframes.Parent(asideDiv2, 'iframe-dynamic');
-
-        //Add the new frame to the document
-        asideDiv2.appendChild(newFrame);
+        new reactive.iframes.Parent(document.getElementById('iframe-dynamic'), 'iframe-dynamic');
     </script>
 </body>
 </html>
