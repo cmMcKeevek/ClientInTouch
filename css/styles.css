@@ -29,7 +29,7 @@ hr {
     border-top: 1px solid #609732;
 }
 
-article h1, aside h1 {
+article h2, aside h2 {
 	font-size: 1em;
 	color: #609732;
 	text-transform: uppercase;
@@ -74,7 +74,7 @@ main > article, main > aside {
 	}
 }
 
-main > h1 {
+main > h2 {
 	margin-bottom: 10px;	
 }
 
