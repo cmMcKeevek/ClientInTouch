@@ -1,4 +1,16 @@
-IFRAME TEMPLATE ISSUE NOTES:
+DEV CYCLE:
+	Other branch: Kevin_iframe
+	
+	External Host:
+	http://clientintouch.campminderfax.com/
+	Host:
+	https://pages.github.com/
+	
+	Local Source:
+	file:///C:/Users/Kevin/source/repos/ClientInTouch/index.html
+	
+
+ISSUE NOTES:
 	X-FRAME-OPTIONS Solution
 		Child frame content decides if it's ok being loaded by the parent frame
 		Either allow-all or .Remove()? or ask each client for their URL?
