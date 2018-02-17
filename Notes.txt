@@ -1,0 +1,15 @@
+IFRAME TEMPLATE ISSUE NOTES:
+	X-FRAME-OPTIONS Solution
+		Child frame content decides if it's ok being loaded by the parent frame
+		Either allow-all or .Remove()? or ask each client for their URL?
+	Modals wider than 530px? WTF Vault.
+		Make them smaller?
+	Modal Masks
+		Extend interface to mask outer frame
+		Or have outer frame open the modal+mask
+		Or leave it half-masked. It's probably fine.
+	Handle top-frame redirect override for mobile-specific pages
+		Mobile news etc isn't tall enough by default...?
+	Handle Stylesheets provided by the parent?
+	Deal with notemplate=1 being sticky? or require removal of template? or implement new way of eliminating the template for within iframes? Or load the template and have that be the way that stylesheets are loaded?
+	Make sure to change every CIT.Master not just the UI/ one
