@@ -10,9 +10,10 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/reset.meyerweb.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
 
-    <script type="text/javascript" src="../js/reactive.iframes.parent.js"></script>
+    <!--<script type="text/javascript" src="../js/reactive.iframes.parent.js"></script>-->
+    <script type="text/javascript" src="http://campintouch/js/iframe_parent_script.js"></script>
 </head>
-<body>
+<body style="background-color:lightgrey;">
     <main>
         <header>
             <h1>Summer Camp</h1>
@@ -24,8 +25,11 @@
             <p>In tincidunt tortor ligula. Mauris molestie varius leo, et lacinia arcu pharetra quis. Maecenas tincidunt ex non odio pharetra porta. Nullam auctor efficitur metus id laoreet. Quisque volutpat risus at dapibus pharetra. Quisque accumsan molestie lobortis. Sed ut nisl elit. Sed non placerat elit, mollis aliquet velit.</p>
             <div id="iframe-dynamic" class="article-sub">
                 <iframe src="http://campintouch/ui/forms/application/camper/App?domain=boulder&notemplate=1"
-                        style="width:100%; min-width:530px"
-                        scrolling="no" ></iframe>
+                        style="width:100%; 
+                               min-width:530px;
+                               background-color:lightgrey;"
+                        scrolling="no" 
+                        id="CampMinderIFrame"></iframe>
             </div>
         </article>
         <aside>
@@ -37,7 +41,9 @@
 
     <script type="text/javascript">
         //Tell the parent div it is a reactive iframe parent (this step can happen at any point)
-        new reactive.iframes.Parent(document.getElementById('iframe-dynamic'), 'iframe-dynamic');
+        var zIndex = 1000;
+        var heightToAdd = 0;
+        new reactive.iframes.Parent(document.getElementById('iframe-dynamic'), 'iframe-dynamic', heightToAdd, zIndex);
     </script>
 </body>
 </html>
