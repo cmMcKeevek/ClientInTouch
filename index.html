@@ -27,6 +27,19 @@
 				anchors[i].href = anchors[i].href.replace(target.oldvalue, target.value);
 			}
 		};
+
+		var onClientChanged = function (target) {
+			let anchors = document.getElementsByTagName("a");
+			for (let i = 0; i <anchors.length; i++) {
+				anchors[i].href = anchors[i].href.replace(target.oldvalue, target.value);
+			}
+			
+			let scopeChanger = document.getElementById("scopeChanger");
+			for (let i = 0; i <scopeChanger.children.length; i++) {
+				scopeChanger.children[i].value = scopeChanger.children[i].value.replace(target.oldvalue, target.value);
+			}
+			target.blur();
+		};
 	</script>
 </head>
 <body style="background-color:lightgrey;" class="container">
@@ -55,11 +68,19 @@
                 <a class="nav-link" href="http://campintouch/myAccount.aspx?domain=boulder&notemplate=1" target="CampMinderIFrame">CIT Home</a>
             </li>
 			<li>
-				<select onfocus="this.oldvalue = this.value;" onchange="onScopeChanged(this)">
+				<select id="scopeChanger" onfocus="this.oldvalue = this.value;" onchange="onScopeChanged(this)">
 					<option value="http://campintouch">Local</option>
 					<option value="https://boulder.test1.campintouch.com">Test1</option>
 					<option value="https://boulder.test2.campintouch.com">Test2</option>
 					<option value="https://boulder.test3.campintouch.com">Test3</option>
+				</select>
+			</li>
+			<li>
+				<select onfocus="this.oldvalue = this.value;" onchange="onClientChanged(this)">
+					<option value="boulder">Boulder</option>
+					<option value="yondermountain">Yonder Mountain</option>
+					<option value="cmcamptrainings">CM Camp Trainings</option>
+					<option value="betsy">Betsy</option>
 				</select>
 			</li>
         </ul>
