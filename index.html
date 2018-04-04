@@ -20,7 +20,14 @@
             var iframeParentId = 'iframe-dynamic';
             new reactive.iframes.Parent(document.getElementById(iframeParentId), iframeParentId, heightToAdd, zIndex);
         });
-    </script>
+
+		var onScopeChanged = function (target) {
+			let anchors = document.getElementsByTagName("a");
+			for (let i = 0; i <anchors.length; i++) {
+				anchors[i].href = anchors[i].href.replace(target.oldvalue, target.value);
+			}
+		};
+	</script>
 </head>
 <body style="background-color:lightgrey;" class="container">
     <header>
@@ -47,6 +54,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="http://campintouch/myAccount.aspx?domain=boulder&notemplate=1" target="CampMinderIFrame">CIT Home</a>
             </li>
+			<li>
+				<select onfocus="this.oldvalue = this.value;" onchange="onScopeChanged(this)">
+					<option value="http://campintouch">Local</option>
+					<option value="https://boulder.test1.campintouch.com">Test1</option>
+					<option value="https://boulder.test2.campintouch.com">Test2</option>
+					<option value="https://boulder.test3.campintouch.com">Test3</option>
+				</select>
+			</li>
         </ul>
     </nav>
     <hr />
